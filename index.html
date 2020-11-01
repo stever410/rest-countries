@@ -5,17 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/1de4292787.js" crossorigin="anonymous"></script>
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" async></script>
   <title>Rest Countries API</title>
 </head>
 
 <body class="has-navbar-fixed-top">
+  <!-- navbar section -->
   <header>
     <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item is-size-5 ml-2 has-text-weight-bold" href="https://bulma.io">
+        <a class="navbar-item is-size-5 ml-2 has-text-weight-bold" href="#">
           Where in the world
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -26,7 +27,7 @@
         </a>
       </div>
       <div class="navbar-end">
-        <div class="navbar-item">
+        <div class="navbar-item" id="dark-mode">
           <span class="icon is-small is-left">
             <i class="fas fa-adjust"></i>
           </span>
@@ -36,63 +37,49 @@
       </div>
     </nav>
   </header>
-  <main class="container-fluid mt-6">
+
+  <!-- main section -->
+  <main class="container mt-6">
+    <!-- search section -->
     <div class="columns">
-      <div class="column is-3 is-offset-1">
+      <div class="column is-3">
         <div class="control has-icons-left">
-          <input class="input" type="text" placeholder="Search for a countries">
+          <input class="input" type="text" placeholder="Search for a countries" id="search-country">
           <span class="icon is-left">
             <i class="fas fa-search"></i>
           </span>
         </div>
       </div>
-      <div class="column is-2 is-offset-6">
-        <div class="control">
-          <div class="dropdown is-right">
-            <div class="dropdown-trigger">
-              <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>Filter by region</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <a class="dropdown-item">Africa</a>
-                <a class="dropdown-item">America</a>
-                <a class="dropdown-item">Asia</a>
-                <a class="dropdown-item">Europe</a>
-                <a class="dropdown-item">Oceania</a>
-              </div>
+      <div class="column is-2 is-offset-7">
+        <div class="dropdown is-right">
+          <div class="dropdown-trigger">
+            <button class="button ml-6" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>Filter by region</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a class="dropdown-item">Africa</a>
+              <a class="dropdown-item">America</a>
+              <a class="dropdown-item">Asia</a>
+              <a class="dropdown-item">Europe</a>
+              <a class="dropdown-item">Oceania</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="columns">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-            <div class="media-content">
-              <p class="title is-4">John Smith</p>
-              <p class="subtitle is-6">@johnsmith</p>
-            </div>
-          </div>
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-          </div>
-        </div>
-      </div>
+
+    <!-- cards section -->
+    <div class="columns is-multiline is-flex" id="countries-grid">
     </div>
+
+    <!-- pagination -->
+    <nav id="pagination" role="navigation" aria-label="pagination">
+    </nav>
   </main>
 </body>
 

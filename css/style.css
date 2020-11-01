@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.column .card {
+  height: 100%;
+}
+
+.dark-blue {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.dark-blue .navbar-item {
+  color: #ffffff;
+}
+
+.dark-blue .card-content {
+  color: #ffffff;
+}
+
+.dark-blue .card-content p {
+  color: #ffffff;
+}
+
+.very-dark-blue {
+  background-color: hsl(207, 26%, 17%);
+}
